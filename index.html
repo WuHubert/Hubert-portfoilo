@@ -1,0 +1,719 @@
+<!doctype html>
+  <html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Helpdesk 維修作品集</title>
+    <meta name="description" content="電腦維修 / Helpdesk 作品集與專案展示" />
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+      <!-- 在 head 中添加 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+  <!-- 更新 Navbar -->
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top fractal-navbar">
+  <div class="container-fluid px-4">
+    <!-- 左側 Logo/品牌 -->
+    <a class="navbar-brand fractal-logo" href="#home">
+
+      <span class="brand-text">吳家瀚portfollo</span>
+    </a>
+    <!-- 漢堡按鈕 -->
+    <button class="navbar-toggler fractal-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="切換導覽">
+      <span class="fractal-bar"></span>
+      <span class="fractal-bar"></span>
+      <span class="fractal-bar"></span>
+    </button>
+    <!-- 右側選單 -->
+    <div class="collapse navbar-collapse fractal-menu" id="navContent">
+      <ul class="navbar-nav ms-auto align-items-center gap-lg-2 gap-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">技能</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">專案</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link fractal-contact" href="#contact">聯絡我</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Hero 自我介紹 -->
+    <header id="home" class="hero-section d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-7">
+            <div class="hero-badgeA text-start  mt-4">
+            <h1 class="display-6 fw-bold text-dark mb-3">嗨，我是吳家瀚</h1>
+            <p class="lead text-black-50 mb-4">技術問題不再，體驗決定一切
+              
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+
+        
+            </div>
+          
+          </div>
+          <div class="col-12 col-lg-5 text-center text-lg-end">
+            
+          </div>
+        </div>
+      </div>
+      <!-- 背景裝飾 -->
+      <div class="hero-bg"></div>
+    </header>
+
+     <!-- Skills 區域 -->
+  <section id="skills" class="py-5" style="background: linear-gradient(to bottom, #f8f9fa, #ffffff);">
+    <div class="container">
+      <!-- 標題區域 -->
+      <div class="text-center mb-5">
+        <h2 class="display-8 fw-bold mb-3" style="color: #1d1d1f;">技能</h2>
+        <h2 class="display-3 fw-bold mb-3" style="color: #1d1d1f;">全面到位</h2>
+        <p class="lead text-muted"></p>
+      </div>
+  
+      <!-- 技能卡片網格 -->
+      <div class="skills-grid">
+        <!-- 硬體維修 -->
+        <div class="skill-card" data-skill="hardware">
+          <div class="skill-icon">
+            <i class="bi bi-tools text-primary"></i>
+          </div>
+          <h4 class="skill-title">電腦維修</h4>
+          <p class="skill-preview">專業電腦硬體診斷與維修</p>
+        </div>
+  
+        <!-- 系統優化 -->
+        <div class="skill-card" data-skill="system">
+          <div class="skill-icon">
+            <i class="bi bi-speedometer2 text-success"></i>
+          </div>
+          <h4 class="skill-title">系統</h4>
+          <p class="skill-preview">作業系統安裝與優化</p>
+        </div>
+  
+        <!-- 網路設定 -->
+        <div class="skill-card" data-skill="support">
+          <div class="skill-icon">
+            <i class="bi bi-headset text-info"></i>
+          </div>
+          <h4 class="skill-title">支援</h4>
+          <p class="skill-preview">提供技術支援與故障排除</p>
+        </div>
+  
+     
+  </section>
+  
+  <!-- 技能詳情彈出視窗 -->
+  <div class="skill-modal" id="skillModal">
+    <div class="skill-modal-overlay" onclick="closeSkillModal()"></div>
+    <div class="skill-modal-content">
+      <button class="skill-modal-close" onclick="closeSkillModal()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      
+      <div class="skill-modal-body">
+        <!-- 動態內容會被 JavaScript 插入 -->
+      </div>
+    </div>
+  </div>
+
+      <section id="projects" class="py-5">
+        <div class="container">
+          <!-- 標題區域 -->
+          <div class="text-center mb-5 pb-4">
+            <h2 class="display-3 fw-bold mb-3">專案實例</h2>
+            <p class="lead text-muted"></p>
+          </div>
+      
+          <!-- 標籤切換器 -->
+          <div class="project-tabs-container mb-5">
+            <div class="project-tabs">
+              <button class="project-tab active" data-project="upgrade">系統升級</button>
+              <button class="project-tab" data-project="maintenance">電腦維護</button>
+              <button class="project-tab" data-project="support">技術支援</button>
+              <button class="project-tab" data-project="development">系統開發</button>
+              <div class="tab-indicator"></div>
+            </div>
+          </div>
+      
+          <!-- 專案內容區域 -->
+          <div class="project-content-area">
+            <!-- 系統升級專案 -->
+            <div class="project-content active" id="upgrade">
+              <div class="apple-project-card">
+                <div class="apple-project-image">
+                  <img src="images/ssdc.webp" class="project-image" alt="效能革命，老機新生">
+                </div>
+                
+              </div>
+              <div class="apple-project-content">
+                  <h3 class="apple-project-title">效能革命，老機新生</h3>
+                  <p class="apple-project-description">
+                    升級 SSD 與 RAM，大幅提升系統反應速度，開機速度縮短 30 秒，讓老舊設備重獲新生。
+                  </p>
+                 <button class="more-details-btn" onclick="openProjectModal('upgrade')">
+        查看更多
+        <i class="bi bi-arrow-right ms-2"></i>
+      </button>
+                </div>
+            </div>
+      
+            <!-- 電腦維護專案 -->
+            <div class="project-content" id="maintenance">
+              <div class="apple-project-card">
+                <div class="apple-project-image">
+                  <img src="images/rogcoola.webp" class="project-image" alt="極致散熱，靜音運行">
+                </div>
+              
+              </div>
+                <div class="apple-project-content">
+                  <h3 class="apple-project-title">極致散熱，靜音運行</h3>
+                  <p class="apple-project-description">
+                    整理電腦散熱系統，清理灰塵，消除風扇噪音問題。
+                  </p>
+                <button class="more-details-btn" onclick="openProjectModal('maintenance')">
+        查看更多
+        <i class="bi bi-arrow-right ms-2"></i>
+      </button>
+                </div>
+            </div>
+            
+      
+            <!-- 技術支援專案 -->
+            <div class="project-content" id="support">
+              <div class="apple-project-card">
+                <div class="apple-project-image">
+                  <img src="images/bluescreen.webp" class="project-image" alt="問題，迎刃而解">
+                </div>
+               
+              </div>
+               <div class="apple-project-content">
+                  <h3 class="apple-project-title">問題，迎刃而解</h3>
+                  <p class="apple-project-description">
+                   解決系統藍屏問題，提供即時遠端協助，快速診斷並解決各種技術問題。
+                  </p>
+                <button class="more-details-btn" onclick="openProjectModal('support')">
+        查看更多
+        <i class="bi bi-arrow-right ms-2"></i>
+      </button>
+                </div>
+            </div>
+      
+            <!-- 系統開發專案 -->
+            <div class="project-content" id="development">
+              <div class="apple-project-card">
+                <div class="apple-project-image">
+                  <img src="images/dev_1a.webp" class="project-image" alt="電子公文系統開發">
+                </div>
+               
+              </div>
+               <div class="apple-project-content">
+                  <h3 class="apple-project-title">電子公文系統開發</h3>
+                  <p class="apple-project-description">
+                   重新定義簽核方式。
+                  </p>
+                 <button class="more-details-btn" onclick="openProjectModal('development')">
+        查看更多
+        <i class="bi bi-arrow-right ms-2"></i>
+      </button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- 專案詳情彈出視窗 -->
+      <div class="project-modal" id="projectModal">
+        <div class="project-modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="project-modal-content">
+          <button class="project-modal-close" onclick="closeProjectModal()">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          
+          <div class="project-modal-body">
+            <!-- 動態內容會被 JavaScript 插入 -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="bg-dark text-white-50 py-4 mt-auto">
+        <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+          <div>© <span id="year"></span> Hubert</div>
+        </div>
+      </footer>
+
+    <!-- 只保留一個 script 區塊 -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 年份
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // 專案標籤切換功能
+      function initProjectTabs() {
+        const tabs = document.querySelectorAll('.project-tab');
+        const contents = document.querySelectorAll('.project-content');
+        const indicator = document.querySelector('.tab-indicator');
+        
+        // 設定初始指示器位置
+        function updateIndicator(activeTab) {
+          const tabRect = activeTab.getBoundingClientRect();
+          const containerRect = activeTab.parentElement.getBoundingClientRect();
+          const left = tabRect.left - containerRect.left;
+          const width = tabRect.width;
+          
+          indicator.style.left = `${left}px`;
+          indicator.style.width = `${width}px`;
+        }
+        
+        // 初始化指示器
+        const activeTab = document.querySelector('.project-tab.active');
+        if (activeTab) {
+          updateIndicator(activeTab);
+        }
+        
+        // 標籤點擊事件
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const projectId = tab.dataset.project;
+            
+            // 移除所有 active 狀態
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // 添加 active 狀態
+            tab.classList.add('active');
+            document.getElementById(projectId).classList.add('active');
+            
+            // 更新指示器位置
+            updateIndicator(tab);
+          });
+        });
+        
+        // 視窗大小改變時重新計算指示器位置
+        window.addEventListener('resize', () => {
+          const activeTab = document.querySelector('.project-tab.active');
+          if (activeTab) {
+            updateIndicator(activeTab);
+          }
+        });
+      }
+      
+      // 滾動動畫
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+
+      // 初始化
+      document.addEventListener('DOMContentLoaded', () => {
+        initProjectTabs();
+        initNavbarScroll();
+        
+        // 觀察所有需要動畫的元素
+        document.querySelectorAll('.feature-content, .feature-image').forEach(el => {
+          observer.observe(el);
+        });
+      });
+
+      // Navbar 滾動效果
+function initNavbarScroll() {
+  const navbar = document.getElementById('mainNav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  function updateNavbar() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+  
+  // 平滑滾動事件監聽
+  let ticking = false;
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateNavbar();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // 導覽連結點擊效果
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // 移除所有 active 狀態
+      navLinks.forEach(l => l.classList.remove('active'));
+      // 添加當前 active 狀態
+      link.classList.add('active');
+      
+      // 平滑滾動到目標
+      const targetId = link.getAttribute('href');
+      if (targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+  
+  // 初始檢查
+  updateNavbar();
+}
+    </script>
+    <script>
+// 技能詳細資料
+const skillsData = {
+  hardware: {
+    icon: 'bi-tools',
+    title: '電腦維修',
+    subtitle: '',
+    capabilities: [
+      {
+        icon: 'bi-cpu',
+        title: '故障檢修',
+        description: '檢測電腦故障原因，快速修復問題'
+      },
+      {
+        icon: 'bi-server',
+        title: '設備維護',
+        description: '系統資料轉移、設備升級與保養'
+      },
+      {
+        icon: 'bi-fan',
+        title: '裝機與測試',
+        description: '組裝與測試電腦零組件'
+      }
+    ]
+  },
+  system: {
+    icon: 'bi-speedometer2',
+    title: '系統',
+    subtitle: '',
+    capabilities: [
+      {
+        icon: 'bi-arrow-clockwise',
+        title: '系統安裝',
+        description: '安裝與升級 Windows/macOS 系統，並進行系統建置'
+      },
+      {
+        icon: 'bi-shield-check',
+        title: '安全防護',
+        description: '防毒軟體與防火牆設定'
+      },
+      {
+        icon: 'bi-speedometer',
+        title: '流暢體驗',
+        description: '優化系統設定，解決系統卡頓問題'
+      },
+    ]
+  },
+support: {
+  icon: 'bi-headset',
+  title: '支援',
+  subtitle: '',
+  capabilities: [
+    {
+      icon: 'bi-chat-dots',
+      title: '手冊撰寫',
+      description: '撰寫技術手冊，提供操作說明'
+    },
+    {
+      icon: 'bi-display',
+      title: '日常錯誤排除',
+      description: '排除日常使用的問題'
+    },
+  {
+        icon: 'bi-diagram-3',
+        title: '辦公設備支援',
+        description: '基本網路連線與印表機故障排除'
+      },
+  ]
+  },
+  
+};
+
+// 開啟技能詳情
+function openSkillModal(skillKey) {
+  const skill = skillsData[skillKey];
+  if (!skill) return;
+  
+  const modal = document.getElementById('skillModal');
+  const modalBody = modal.querySelector('.skill-modal-body');
+  
+  modalBody.innerHTML = `
+    <div class="skill-detail-header">
+      <div class="skill-detail-icon">
+        <i class="${skill.icon}"></i>
+      </div>
+      <h3 class="skill-detail-title">${skill.title}</h3>
+      <p class="skill-detail-subtitle">${skill.subtitle}</p>
+    </div>
+    
+    <div class="skill-capabilities">
+      <h4 class="mb-3" style="color: #1d1d1f; font-weight: 600;">核心能力</h4>
+      ${skill.capabilities.map(cap => `
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="${cap.icon}"></i>
+          </div>
+          <div class="capability-content">
+            <h5>${cap.title}</h5>
+            <p>${cap.description}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+// 關閉技能詳情
+function closeSkillModal() {
+  const modal = document.getElementById('skillModal');
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// 綁定卡片點擊事件
+document.addEventListener('DOMContentLoaded', function() {
+  const skillCards = document.querySelectorAll('.skill-card');
+  skillCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const skillKey = this.dataset.skill;
+      openSkillModal(skillKey);
+    });
+  });
+  
+  // ESC 鍵關閉模態框
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeSkillModal();
+    }
+  });
+});
+</script>
+<script>
+// 專案詳細資料
+const projectsData = {
+  upgrade: {
+    title: '兼顧速度與相容性的解決方案',
+    subtitle: '',
+    description: '',
+    features: [
+      {
+        title: 'SSD與RAM升級',
+        description: '日常使用卡頓，並不是因為硬體老舊，而是因為系統配置不當。透過升級 SSD 與 RAM，讓老舊設備重獲新生。 ',
+        image: 'images/ssd1.webp',
+        stats: [
+          
+        ]
+      },
+      {
+        title: '',
+        description: '',
+        image: 'images/ssd2.webp',
+        stats: [
+          '<span class="stat-title">系統轉移</span><br>將硬碟資料複製到新硬碟，節省重新設定的時間',
+          '<span class="stat-title">友善軟體相容</span><br>老舊設備升級後，仍能順利運行舊版軟體',
+          '<span class="stat-title">效能提升</span><br>系統速度有感提升，開機速度縮短 30 秒',
+        ]
+      }
+    ]
+  },
+  maintenance: {
+    title: '保持冷靜，穩定運行',
+    subtitle: '',
+    description: '',
+    features: [
+      {
+        title: '散熱系統整理，',
+        description: '清除筆電內部的灰塵，保持風道暢通，確保效能穩定釋放',
+        image: 'images/cooling1a.webp',
+        stats: [
+          
+        ]
+      },
+      {
+        title: '',
+        description: '',
+        image: 'images/cooler_temp.webp',
+        stats: [
+          '<span class="stat-title">轉速控制</span><br>調整風扇轉速，在靜音與散熱中取得平衡',
+          '<span class="stat-title">更換散熱膏</span><br>重新塗抹散熱膏，確保銅片與晶片接觸',
+          '<span class="stat-title">穩定測試</span><br>使用測試工具進行壓力測試，確保系統穩定性',
+        ]
+      }
+    ]
+  },
+  support: {
+    title: '始終以使用者為出發點，解決問題',
+    subtitle: '',
+    description: '',
+    features: [
+      {
+        title: '技術協助',
+        description: '不只處理使用者的痛點，還能預見潛在問題，優化整體使用體驗。',
+        image: 'images/support1.webp',
+        stats: [
+        ]
+      },
+       {
+        title: '',
+        description: '',
+        image: 'images/support2.webp',
+        stats: [
+          '<span class="stat-title">遠端連線</span><br>透過遠端連線軟體，不受地點限制，即時處理問題',
+          '<span class="stat-title">技術諮詢</span><br>解決軟體日常使用的各種問題，擔任技術與使用者之間的橋樑',
+          '<span class="stat-title">使用者優先</span><br>針對使用者需求，提供個性化的解決方案',
+        ]
+      }
+    ]
+  },
+
+  development: {
+    title: '為人設計，而不為功能',
+    subtitle: '',
+    description: '',
+    features: [
+ {
+        title: '安全直覺的系統',
+        description: '評估現有設計的缺點，改善安全性的同時，提升系統的易用性。',
+        image: 'images/dev_1.webp',
+        stats: [
+        ]
+      },
+       {
+        title: '',
+        description: '',
+        image: 'images/dev_2.webp',
+        stats: [
+          '<span class="stat-title">資料加密</span><br>區塊鏈為概念設計安全機制，最大化系統安全，確保資料不受威脅',
+          '<span class="stat-title">介面精簡化</span><br>重新設計按鈕位置及系統介面，提高辦公效率',
+          '<span class="stat-title">功能模組化</span><br>將系統功能拆分為獨立模組，便於維護與升級',
+
+        ]
+      }
+    ]
+  },
+};
+
+// 開啟專案詳情
+function openProjectModal(projectKey) {
+  const project = projectsData[projectKey];
+  if (!project) return;
+  
+  const modal = document.getElementById('projectModal');
+  const modalBody = modal.querySelector('.project-modal-body');
+  
+  let featuresHTML = '';
+  project.features.forEach((feature, index) => {
+    const isEven = index % 2 === 0;
+    const contentClass = isEven ? 'feature-content-left' : 'feature-content-right';
+    
+    featuresHTML += `
+      <div class="feature-block">
+        <div class="${contentClass}">
+          <div class="feature-text">
+            <h3>${feature.title}</h3>
+            <p>${feature.description}</p>
+            <ul class="feature-stats">
+              ${feature.stats.map(stat => `
+                <li></i>${stat}</li>
+              `).join('')}
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <img src="${feature.image}" alt="${feature.title}">
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
+  modalBody.innerHTML = `
+    <div class="project-detail-section">
+      <div class="project-detail-header">
+        <h2 class="project-detail-title">${project.title}</h2>
+        <p class="project-detail-subtitle">${project.subtitle}</p>
+        <p class="project-detail-description">${project.description}</p>
+      </div>
+    </div>
+    
+    <div class="feature-showcase">
+      ${featuresHTML}
+    </div>
+  `;
+  
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+// 關閉專案詳情
+function closeProjectModal() {
+  const modal = document.getElementById('projectModal');
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// ESC 鍵關閉模態框
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeProjectModal();
+  }
+
+  
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const navCollapse = document.getElementById('navContent');
+      if (navCollapse) {
+        // 開始關閉：加上淡出控制 class
+        navCollapse.addEventListener('hide.bs.collapse', () => {
+          navCollapse.classList.add('nav-hiding');
+        });
+        // 完全關閉：移除控制 class，恢復到初始隱藏狀態
+        navCollapse.addEventListener('hidden.bs.collapse', () => {
+          navCollapse.classList.remove('nav-hiding');
+        });
+        // 開啟前：確保不殘留關閉中的 class
+        navCollapse.addEventListener('show.bs.collapse', () => {
+          navCollapse.classList.remove('nav-hiding');
+        });
+      }
+    });
+    
+});
+</script>
+</body>
+</html>
