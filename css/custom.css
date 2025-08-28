@@ -65,8 +65,8 @@ body{
   border: 1px solid rgba(255,255,255,0.25);
   border-radius: 12px;
   backdrop-filter: blur(110px);
-  padding: 16px 16px;
-  max-width: 330px;
+  padding: 24px 24px;
+  max-width: 450px;
 }
 
 /* Carousel */
@@ -1029,10 +1029,10 @@ body{
 
 .project-modal-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 44px;
-  height: 44px;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 36px;
+  height: 36px;
   border: none;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -1058,19 +1058,22 @@ body{
 
 /* 專案詳情區塊 */
 .project-detail-section {
-  padding: 4rem 2.5rem;
+  padding: 3.5rem 1.5rem 2rem 1.5rem;
   background: linear-gradient(135deg, #ffffffa2 0%, #000000b1 100%);
 
 }
 
 .project-detail-header {
   text-align: center;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
   margin-bottom: 1rem;
+
 }
 
 
 .project-detail-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: white;
   margin-bottom: 1rem;
